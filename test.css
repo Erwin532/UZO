@@ -15,6 +15,42 @@ body {
   margin: 0;
   padding: 0;
 }
+.zoom{
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  overflow: hidden;
+  background-image: url(/img/bg.jpg);
+  background-size: cover;
+}
+.zoom:before{
+  content: '';
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  background: linear-gradient(transparent,rgb(255, 255, 255));    
+}
+.zoom #layer1{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+}
+.zoom #layer2{
+  position: absolute;
+  left: 40%;
+  width: 100%;
+  transform: translateX(-40%);
+  z-index: 10;
+}
+.zoom #text{
+  position: absolute;
+  right: 0;
+  width: 100%;
+  transform: translateY(50%);
+}
 
 .swiper-container {
   width: 50%;
@@ -29,12 +65,14 @@ body {
 }
 
 .gallery-top {
-  height: 40%;
-  width: 50%;
+  height: 80%;
+  width: 80%;
+  margin-top: 50px;
 }
 
 .gallery-thumbs {
-  height: 20%;
+  width: 80%;
+  height: 30%;
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -57,6 +95,9 @@ body {
     line-height: 30vh;
     color: white;
 }
+.slogan p{
+
+}
 .slogan_bottom{
     margin: auto;
     width: 50%;
@@ -74,6 +115,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    margin-bottom: 150px;
 }
 
 .img_area{
@@ -102,23 +144,33 @@ body {
     width: 400px;
     height: 200px;
     background-color: white;
-    border: 20px solid rgb(233, 158, 18);
-    border-radius: 3%;
+    border: 10px solid rgb(233, 158, 18);
+    border-radius: 10px;
 }
 .menu_btn{
     width: 200px;
     height: 50px;
     background-color: rgb(233, 158, 18);
-    border-radius: 10%;
-
+    border-radius: 10px;
+    margin-left: 50px;
     font-size: 18px;
     color: black;
     text-align: center;
     line-height: 50px;
     float: right;
 }
+.menu_btn:hover{
+  color: aliceblue;
+  background-color: coral;
+  cursor: pointer;
+}
+#food_part .menu_btn{
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
 #beer_part h1{
-    padding-left: 400px;
+  margin-bottom: 200px;
+    margin-left: 0;
 }
 #game_part{
     display: flex;
@@ -126,4 +178,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+#game_part .content{
+  padding: ;
+}
+
 

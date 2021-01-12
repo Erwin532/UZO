@@ -5,88 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UZO</title>
     <link rel="stylesheet" href="/uzo.css">
-    <style>
-        body{
-    margin: 0;
-    padding: 0;
-}
-.zoom{
-    width: 100%;
-    height: 1000px;
-    position: relative;
-    overflow: hidden;
-    background-image: url(/bg.jpg);
-    background-size: cover;
-}
-.zoom:before{
-    content: '';
-    height: 200px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    z-index: 100;
-    background: linear-gradient(transparent,rgb(255, 255, 255));
-    
-}
+    <link rel="stylesheet" href="/test.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="test.css">
+<style>
 
-
-
-.zoom #layer1{
-    position: absolute;
-    right: 0;
-    width: 100%;
-    z-index: 9;
-}
-.zoom #layer2{
-    position: absolute;
-    bottom: 20%;
-    left: 0;
-    width: 60%;
-    z-index: 10;
-}
-.zoom #text{
-    position: absolute;
-    right: 0;
-    width: 100%;
-    transform: translateY(20%);
-}
-
-    </style>
+</style>
 </head>
 <body>
-    <section class="zoom">
-        <img src="/building.png" id="layer1">
-        <img src="" id="layer2">
+<!-- Paralax -->
+<section class="zoom">
+        <img src="/img/building.png" id="layer1">
+        <img src="/img/f416781cf2ede1ff7b932d06d2d3ce65.png" id="layer2">
+        <img src="/img/text.png" id="text">
 
-        <img src="/text.png" id="text">
+</section>
+<!-- Swipper -->
+        <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">          
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+          </div>        
+          <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+              <div class="swiper-slide" style="background-image:url(/img/92951366_2822694281112724_998669119970607104_o.jpg)"></div>
+            </div>
+          </div>   
+<!-- Initialize Swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      loop: true,
+      freeMode: true,
+      loopedSlides: 5, //looped slides should be the same
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      loop: true,
+      loopedSlides: 5, //looped slides should be the same
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+    });
+   </script>
+<!-- logo -->
+<section class="slogan_part">
+      <div class="slogan"><strong>U</strong> rban</div><br>
+      <div class="slogan"><strong>Z</strong>  ealous</div>
+      <div class="slogan"><strong>O</strong>  asis</div>
+      <div class="slogan_bottom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam adipisci accusamus ducimus debitis odio saepe corporis nulla modi placeat ad, obcaecati, consequatur assumenda repellendus minima doloremque sed? Accusamus, esse porro!</div>
+</section>
+<section class="main">
+<!-- UZO理念 -->
+    <div class="part" >
+      
+        <div class="img_area">
+            <img src="/img/IMG_4104-7.jpg" alt="UZO-house"width="100%" style="border: 30px solid #ffffff;border-radius: 3%;">
+    </div>
+        <div class="content">
+            <h1>UZO 理念</h1>
+            <p>UZO為Urban Zealous Oasis的縮寫，<br>
+               意思是城市裡一個小小的但卻熱情異常<br>
+               的角落，創始人John熱情好客，希望在<br>
+               台中這個喧囂忙碌的城市裡，可以有個<br>
+               地方讓朋友們聚在一起享用各式美食及<br>
+               酒精，並且一起觀賞賽事轉播為自己的<br>
+               喜愛的隊伍加油，於是便開了UZO Bar&<br>
+               Grill，希望可以藉由這裡認識更多的人<br>
+               ，也讓更多的人在忙碌後可以有個地方好<br>
+               好放鬆。</p>
+
+               <div class="notice"></div>
+        </div>
+    </div>
+<!-- 啤酒調酒地中海料理 -->
+    <div class="part" id="beer_part">
+        <div class="content">
+            <p>在店內，隨時提供來自德式、br
+               美式、英式、比利時超過30
+               0種的精釀啤酒，每週我們更
+               會更換30~40種啤酒風味，希
+               望藉由精釀啤酒帶著大家環遊
+               世界、周遊列國。每周末也有
+               調酒師進駐，帶給大家更好的
+               調酒體驗。當然，請勿酒後開
+               車喔:))</p>
+            <a class="menu_btn"><strong>酒 Menu</a>               
+            <h1>啤酒/調酒搭配地中海料理</h1>
+        </div>
+        <div class="img_area">
+            <img src="/img/section_beer.jpg" alt="UZO-house"width="130%" style="border: 30px solid rgb(233, 158, 18);border-radius: 3%;">        
+    </div>      
+</div>
+<!-- 地中海料理 -->
+    <div class="part"id="food_part" >
+      
+        <div class="img_area">
+            <img src="/img/92951366_2822694281112724_998669119970607104_o.jpg" alt="UZO-house"width="100%" style="border: 30px solid #ffffff;border-radius: 3%;">
         
+    </div>
+        <div class="content">
+            <h1>地中海料理 / 美式料理</h1>
+            <p>薄餅香口薄脆，散發出陣陣焦香，餅底加入番茄醬和水牛芝士、上巴馬火腿、
+                巴馬芝士、火箭菜和松露油、彩椒、烤
+                雞肉、菠菜和希臘Feta芝士等炮製，材
+                料非常豐富，香濃美味                
+                水牛城辣雞翅:
+                採用雞翅的中下部（分flats和drums）
+                ，不上麵粉油炸，再上以辣椒為原料的
+                醬汁及其他調味。勁辣美味!</p>
+                <a class="menu_btn"><strong> Menu</a>    
+        </div>
+    </div>
+<!-- 賽事轉播 -->
+    <div class="part"id="game_part" >    
+    <div class="img_area">
+    <img src="/img/5.jpg" alt="UZO-house"width="100%" style="border: 30px solid rgb(233, 158, 18);border-radius: 3%;">       
+    </div>
+        <div class="content">
+            <h1>賽事轉播</h1>
+            <p>現場提供各式各樣賽事轉播，想要有個地方可以與朋友或著是陌生人一起
+                享受比賽的刺激及美食嗎?來UZO就對了!
+                #soccer#baseball#basketball#Moto!</p>
+                <a class="menu_btn"><strong> 轉播賽事資訊</a>    
+        </div>
+    </div>
+</section>
 
-    </section>
-    
-
-    <script type="text/javascript">
-
-            var layer1 =document.getElementById("layer1")
+<!-- paralax js -->
+<script type="text/javascript">
+            var layer1 =document.querySelector("#layer1")
             scroll=window.pageYOffset;
             document.addEventListener('scroll',
                 function(e){
                 var offset= window.pageYOffset;
                 scroll=offset;
+                console.log(offset);
                 layer1.style.width=(100+scroll/5)+'%';
                 layer1.style.left=scroll/50+'%';
             })
-            
-
-            var text =document.getElementById("text")
+            var layer2 =document.querySelector("#layer2")
             scroll=window.pageYOffset;
             document.addEventListener('scroll',
                 function(e){
                 var offset= window.pageYOffset;
                 scroll=offset;
-                layer1.style.width=(100+scroll/5)+'%';
-                text.style.top= - scoll/20 + '%'
-
+                console.log(offset);
+                layer2.style.width=(100+scroll)+'%';
             })
+            var text =document.querySelector("#text")
+            scroll=window.pageYOffset;
+            document.addEventListener('scroll',
+                function(e){
+                var offset= window.pageYOffset;
+                scroll=offset;
+                console.log(offset);
+                layer2.style.width=(100+scroll/5)+'%';
+                text.style.top= - scroll/20+'%';
+            })          
     </script>
 </body>
 </html>
