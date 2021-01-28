@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 100%;
+            height: 3000px;
+        }
+        .parallax-window {
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            font-size: 70px;
+            font-weight: 900;
+            color: rgb(248, 251, 45);
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 400px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="parallax-window">
+            <div class="box">
+                <img src="/img/UZO-logo-04.png" width="200px">
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script>
+
+        window.onscroll = function () {
+            // console.log(document.documentElement.scrollTop);
+        }
+
+
+        var parallax = document.querySelector(".parallax-window")
+
+        window.onresize = function () {
+            console.log(parallax.offsetTop);
+        }
+
+
+
+        window.onload = function () {
+            lax.init()
+
+            // Add a driver that we use to control our animations
+            lax.addDriver('scrollY', function () {
+                return window.scrollY
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.box', {
+                scrollY: {
+                    translateX: [
+                        [document.querySelector(".parallax-window").offsetTop,
+                        document.querySelector(".parallax-window").offsetTop + 800],
+                        [0, 850],
+                    ],
+                    scale: [
+                        [document.querySelector(".parallax-window").offsetTop + 600,
+                        document.querySelector(".parallax-window").offsetTop + 1200],
+                        [1, 5],
+                    ],
+                    rotate: [
+                        [document.querySelector(".parallax-window").offsetTop + 800,
+                        document.querySelector(".parallax-window").offsetTop + 1200],
+                        [0, 720],
+                    ],
+                    opacity: [
+                        [document.querySelector(".parallax-window").offsetTop + 1100,
+                        document.querySelector(".parallax-window").offsetTop + 1400],
+                        [1, 0],
+                    ],
+                }
+            })
+        }
+    </script>
+</body>
+</html>
